@@ -1,0 +1,32 @@
+{
+  "$schema": "https://tree-sitter.github.io/tree-sitter/assets/schemas/config.schema.json",
+  "grammars": [
+    {
+      "name": "firm",
+      "camelcase": "Firm",
+      "title": "Firm",
+      "scope": "source.firm",
+      "file-types": ["firm"],
+      "injection-regex": "^firm$",
+      "class-name": "TreeSitterFirm"
+    }
+  ],
+  "metadata": {
+    "version": "0.1.0",
+    "license": "AGPL-3.0",
+    "description": "DSL parsing and generation for Firm business entities.",
+    "authors": [
+      {
+        "name": "42futures",
+        "email": "daniel@42futures.com",
+        "url": "https://42futures.com/"
+      }
+    ],
+    "links": {
+      "repository": "https://github.com/42futures/firm-lang"
+    }
+  },
+  "bindings": {
+    "rust": true
+  }
+}
