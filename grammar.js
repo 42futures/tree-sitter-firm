@@ -47,7 +47,23 @@ module.exports = grammar({
     string: ($) =>
       choice(
         /"[^"]*"/, // Regular single-line strings
-        /"""[\s\S]*?"""/, // Triple-quoted multiline strings
+        $.multiline_string, // Separate rule for multiline
+      ),
+
+    // Multiline string with proper escaping
+    multiline_string: ($) =>
+      token(
+        seq(
+          '"""',
+          repeat(
+            choice(
+              /[^"]/, // Any non-quote character
+              /"[^"]/, // One quote not followed by quote
+              /""[^"]/, // Two quotes not followed by quote
+            ),
+          ),
+          '"""',
+        ),
       ),
 
     // Number (5, 9.95)

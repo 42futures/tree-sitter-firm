@@ -28,7 +28,7 @@ enum ts_symbol_identifiers {
   anon_sym_true = 6,
   anon_sym_false = 7,
   aux_sym_string_token1 = 8,
-  aux_sym_string_token2 = 9,
+  sym_multiline_string = 9,
   sym_number = 10,
   sym_currency = 11,
   anon_sym_DOT = 12,
@@ -72,7 +72,7 @@ static const char * const ts_symbol_names[] = {
   [anon_sym_true] = "true",
   [anon_sym_false] = "false",
   [aux_sym_string_token1] = "string_token1",
-  [aux_sym_string_token2] = "string_token2",
+  [sym_multiline_string] = "multiline_string",
   [sym_number] = "number",
   [sym_currency] = "currency",
   [anon_sym_DOT] = ".",
@@ -116,7 +116,7 @@ static const TSSymbol ts_symbol_map[] = {
   [anon_sym_true] = anon_sym_true,
   [anon_sym_false] = anon_sym_false,
   [aux_sym_string_token1] = aux_sym_string_token1,
-  [aux_sym_string_token2] = aux_sym_string_token2,
+  [sym_multiline_string] = sym_multiline_string,
   [sym_number] = sym_number,
   [sym_currency] = sym_currency,
   [anon_sym_DOT] = anon_sym_DOT,
@@ -187,9 +187,9 @@ static const TSSymbolMetadata ts_symbol_metadata[] = {
     .visible = false,
     .named = false,
   },
-  [aux_sym_string_token2] = {
-    .visible = false,
-    .named = false,
+  [sym_multiline_string] = {
+    .visible = true,
+    .named = true,
   },
   [sym_number] = {
     .visible = true,
@@ -704,9 +704,7 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
       if (lookahead == '"') ADVANCE(6);
       END_STATE();
     case 53:
-      ACCEPT_TOKEN(aux_sym_string_token2);
-      if (lookahead == '"') ADVANCE(53);
-      if (lookahead != 0) ADVANCE(6);
+      ACCEPT_TOKEN(sym_multiline_string);
       END_STATE();
     case 54:
       ACCEPT_TOKEN(sym_number);
@@ -882,7 +880,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_true] = ACTIONS(1),
     [anon_sym_false] = ACTIONS(1),
     [aux_sym_string_token1] = ACTIONS(1),
-    [aux_sym_string_token2] = ACTIONS(1),
+    [sym_multiline_string] = ACTIONS(1),
     [sym_number] = ACTIONS(1),
     [sym_currency] = ACTIONS(1),
     [anon_sym_DOT] = ACTIONS(1),
@@ -917,7 +915,7 @@ static const uint16_t ts_small_parse_table[] = {
     ACTIONS(15), 1,
       aux_sym_string_token1,
     ACTIONS(17), 1,
-      aux_sym_string_token2,
+      sym_multiline_string,
     ACTIONS(19), 1,
       sym_number,
     ACTIONS(21), 1,
@@ -947,7 +945,7 @@ static const uint16_t ts_small_parse_table[] = {
     ACTIONS(15), 1,
       aux_sym_string_token1,
     ACTIONS(17), 1,
-      aux_sym_string_token2,
+      sym_multiline_string,
     ACTIONS(19), 1,
       sym_number,
     ACTIONS(21), 1,
@@ -977,7 +975,7 @@ static const uint16_t ts_small_parse_table[] = {
     ACTIONS(15), 1,
       aux_sym_string_token1,
     ACTIONS(17), 1,
-      aux_sym_string_token2,
+      sym_multiline_string,
     ACTIONS(19), 1,
       sym_number,
     ACTIONS(21), 1,
@@ -1007,7 +1005,7 @@ static const uint16_t ts_small_parse_table[] = {
     ACTIONS(15), 1,
       aux_sym_string_token1,
     ACTIONS(17), 1,
-      aux_sym_string_token2,
+      sym_multiline_string,
     ACTIONS(19), 1,
       sym_number,
     ACTIONS(21), 1,
@@ -1035,7 +1033,7 @@ static const uint16_t ts_small_parse_table[] = {
     ACTIONS(15), 1,
       aux_sym_string_token1,
     ACTIONS(17), 1,
-      aux_sym_string_token2,
+      sym_multiline_string,
     ACTIONS(19), 1,
       sym_number,
     ACTIONS(21), 1,
