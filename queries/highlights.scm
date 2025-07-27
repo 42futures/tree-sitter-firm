@@ -1,9 +1,13 @@
 ; Comments
 (comment) @comment
 
-; Entity structure
-(entity_type (identifier) @keyword)
-(entity_id (identifier) @variable)
+; Entity definitions
+(entity_type) @keyword
+(entity_id) @variable
+
+; Schema definitions
+"schema" @type
+(schema_name) @keyword
 
 ; Field names
 (field_name (identifier) @property)
@@ -15,7 +19,7 @@
 (number) @number
 
 ; Currency
-(currency) @number
+(currency) @number.currency
 
 ; Booleans
 ["true" "false"] @boolean
