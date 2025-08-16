@@ -277,7 +277,7 @@ Naming conventions loosely follow Rust conventions because the Firm toolchain is
 Firm is dual-licensed:
 
 - **Open Source:** AGPL-3.0 for open source projects
-- **Commercial:** Available for proprietary use: Contact 42futures for licensing
+- **Commercial:** Commercial license for proprietary use
 
 If you want to use Firm in a proprietary application or service without
-open-sourcing your code, you need a commercial license.
+open-sourcing your code, contact 42futures for a commercial license.
