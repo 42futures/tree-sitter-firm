@@ -134,6 +134,9 @@ entity example {
 
   // References to other entity fields
   role_name = role.cto.name
+
+  // Path to a file or directory
+  location = path"./my/file.txt"
 }
 ```
 
@@ -205,6 +208,17 @@ contact john_doe {
 lead important_deal {
   client_email = contact.john_doe.email
   client_name = contact.john_doe.name
+}
+```
+
+### Tagged string literals
+
+For strings that have a special meaning, they are tagged using a convention of `tag"string"`.
+
+```firm
+document my_doc {
+  // This string represents a path
+  location = path"./here/it/is.md"
 }
 ```
 

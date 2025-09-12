@@ -176,6 +176,10 @@
         {
           "type": "SYMBOL",
           "name": "date"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "path"
         }
       ]
     },
@@ -445,6 +449,19 @@
           }
         ]
       }
+    },
+    "path": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "path"
+        },
+        {
+          "type": "PATTERN",
+          "value": "\"[^\"]*\""
+        }
+      ]
     },
     "comment": {
       "type": "TOKEN",

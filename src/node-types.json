@@ -183,6 +183,11 @@
     }
   },
   {
+    "type": "path",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "reference",
     "named": true,
     "fields": {},
@@ -299,6 +304,10 @@
           "named": true
         },
         {
+          "type": "path",
+          "named": true
+        },
+        {
           "type": "reference",
           "named": true
         },
@@ -361,6 +370,10 @@
   {
     "type": "number",
     "named": true
+  },
+  {
+    "type": "path",
+    "named": false
   },
   {
     "type": "schema",

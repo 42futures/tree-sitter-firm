@@ -34,6 +34,9 @@
 ; References (contact.jane_doe, product.consulting.name)
 (reference (identifier) @variable.special)
 
+; Paths
+(path) @string.special
+
 ; List brackets
 (list) @punctuation.bracket
 

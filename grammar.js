@@ -38,6 +38,7 @@ module.exports = grammar({
         $.list,
         $.datetime,
         $.date,
+        $.path,
       ),
 
     // Logic (true, false)
@@ -125,6 +126,9 @@ module.exports = grammar({
           ),
         ),
       ),
+
+    // A path literal: path"./path/to/file.txt"
+    path: ($) => seq("path", /"[^"]*"/),
 
     // Comments
     comment: ($) =>
