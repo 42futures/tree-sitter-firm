@@ -23,7 +23,7 @@
       }
     ],
     "links": {
-      "repository": "https://github.com/42futures/firm-lang"
+      "repository": "https://github.com/42futures/tree-sitter-firm"
     }
   },
   "bindings": {
