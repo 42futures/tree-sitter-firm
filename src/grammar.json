@@ -180,6 +180,10 @@
         {
           "type": "SYMBOL",
           "name": "path"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "enum"
         }
       ]
     },
@@ -456,6 +460,19 @@
         {
           "type": "STRING",
           "value": "path"
+        },
+        {
+          "type": "PATTERN",
+          "value": "\"[^\"]*\""
+        }
+      ]
+    },
+    "enum": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "enum"
         },
         {
           "type": "PATTERN",

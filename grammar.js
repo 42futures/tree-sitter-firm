@@ -39,6 +39,7 @@ module.exports = grammar({
         $.datetime,
         $.date,
         $.path,
+        $.enum,
       ),
 
     // Logic (true, false)
@@ -129,6 +130,9 @@ module.exports = grammar({
 
     // A path literal: path"./path/to/file.txt"
     path: ($) => seq("path", /"[^"]*"/),
+
+    // An enum literal: enum"value"
+    enum: ($) => seq("enum", /"[^"]*"/),
 
     // Comments
     comment: ($) =>

@@ -137,6 +137,9 @@ entity example {
 
   // Path to a file or directory
   location = path"./my/file.txt"
+
+  // Enum value (validated against schema)
+  status = enum"active"
 }
 ```
 
@@ -220,7 +223,16 @@ document my_doc {
   // This string represents a path
   location = path"./here/it/is.md"
 }
+
+account acme {
+  // This string represents an enum value
+  status = enum"customer"
+}
 ```
+
+**Available tags:**
+- `path"..."` - File or directory paths
+- `enum"..."` - Enum values (validated against schema)
 
 ### Comments
 

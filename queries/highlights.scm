@@ -37,6 +37,9 @@
 ; Paths
 (path) @string.special
 
+; Enums
+(enum) @string.special
+
 ; List brackets
 (list) @punctuation.bracket
 

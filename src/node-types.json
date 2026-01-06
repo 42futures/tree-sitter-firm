@@ -115,6 +115,11 @@
     }
   },
   {
+    "type": "enum",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "field",
     "named": true,
     "fields": {},
@@ -296,6 +301,10 @@
           "named": true
         },
         {
+          "type": "enum",
+          "named": true
+        },
+        {
           "type": "list",
           "named": true
         },
@@ -354,6 +363,10 @@
   {
     "type": "date",
     "named": true
+  },
+  {
+    "type": "enum",
+    "named": false
   },
   {
     "type": "false",
