@@ -7,6 +7,12 @@ fn main() {
     #[cfg(target_env = "msvc")]
     c_config.flag("-utf-8");
 
+    if std::env::var("TARGET").unwrap() == "wasm32-unknown-unknown" {
+        let wasm_headers = std::env::var("DEP_TREE_SITTER_LANGUAGE_WASM_HEADERS")
+            .expect("tree-sitter-language must supply WASM headers");
+        c_config.include(wasm_headers);
+    }
+
     let parser_path = src_dir.join("parser.c");
     c_config.file(&parser_path);
     println!("cargo:rerun-if-changed={}", parser_path.to_str().unwrap());
